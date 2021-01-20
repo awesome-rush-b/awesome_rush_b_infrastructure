@@ -11,15 +11,26 @@ resource "aws_iam_user_policy_attachment" "s3_ghUpLoad_user_policy_attach" {
 }
 
 // GH-Code-Deploy Policy for GitHub Actions to Call CodeDeploy
-resource "aws_iam_policy" "cicd_deploy_call_codeDeply_policy" {
-  name        = "${var.project_name}_cicd_call_codedeploy_policy"
+resource "aws_iam_policy" "cicd_backend_deploy_call_codeDeply_policy" {
+  name        = "${var.project_name}_cicd_backend_call_codedeploy_policy"
   
-  policy = file(var.cicd_call_codedeploy_policy)
+  policy = file(var.cicd_backend_call_codedeploy_policy)
 }
 
-resource "aws_iam_user_policy_attachment" "gh_code_deploy_call_codeDeply_user_policy_attach" {
+resource "aws_iam_user_policy_attachment" "gh_backend_code_deploy_call_codeDeply_user_policy_attach" {
   user       = "cicd"
-  policy_arn = aws_iam_policy.cicd_deploy_call_codeDeply_policy.arn
+  policy_arn = aws_iam_policy.cicd_backend_deploy_call_codeDeply_policy.arn
+}
+
+resource "aws_iam_policy" "cicd_frontend_deploy_call_codeDeply_policy" {
+  name        = "${var.project_name}_cicd_frontend_call_codedeploy_policy"
+  
+  policy = file(var.cicd_frontend_call_codedeploy_policy)
+}
+
+resource "aws_iam_user_policy_attachment" "gh_frontend_code_deploy_call_codeDeply_user_policy_attach" {
+  user       = "cicd"
+  policy_arn = aws_iam_policy.cicd_frontend_deploy_call_codeDeply_policy.arn
 }
 
 // Give access to github for operating the ec2

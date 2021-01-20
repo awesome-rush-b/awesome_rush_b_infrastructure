@@ -76,4 +76,4 @@ buildHelper.sh
 
 *.backup
 
-9_aws_instance_secret.tf
+.terraform.lock*

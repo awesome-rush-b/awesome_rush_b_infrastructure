@@ -8,7 +8,7 @@
           "codedeploy:GetApplicationRevision"
         ],
         "Resource": [
-          "arn:aws:codedeploy:us-east-1:819094020984:application:awesome_rush_b_codedeploy"
+          "arn:aws:codedeploy:us-east-1:819094020984:application:awesome_rush_b_frontend_codedeploy"
         ]
       },
       {

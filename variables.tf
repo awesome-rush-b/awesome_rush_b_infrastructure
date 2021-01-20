@@ -14,16 +14,30 @@ variable "codedeploy_s3" {
   default = "codedeploy.awesomerushb.me"
 }
 
-variable "ec2_ami" {
-  default = "ami-0930bfc3840d729b6"
+variable "backend_ec2_ami" {
+  default = "ami-042558963c127705c"
+}
+
+variable "frontend_ec2_ami" {
+  default = "ami-0f2406b8769428ba0"
 }
 
 variable "cicd_upload_s3_file" {
   default = "policy/cicd_upload_s3_file.json"
 }
 
-variable "cicd_call_codedeploy_policy" {
-  default = "policy/cicd_call_codedeploy.json"
+# // ---
+# variable "cicd_call_codedeploy_policy" {
+#   default = "policy/cicd_call_codedeploy.json"
+# }
+# // ---
+
+variable "cicd_backend_call_codedeploy_policy" {
+  default = "policy/cicd_backend_call_codedeploy.json"
+}
+
+variable "cicd_frontend_call_codedeploy_policy" {
+  default = "policy/cicd_frontend_call_codedeploy.json"
 }
 
 variable "cicd_ec2_role_policy" {

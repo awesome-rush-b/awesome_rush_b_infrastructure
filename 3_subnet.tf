@@ -44,5 +44,5 @@ resource "aws_db_subnet_group" "db_subnet_group" {
     Name = "${var.project_name}_database_db_subnet"
   }
 
-  depends_on = [aws_vpc.vpc,aws_subnet.beta_subnet,aws_subnet.charle_subnet]
+  depends_on = [aws_vpc.vpc,aws_subnet.delta_subnet,aws_subnet.charle_subnet]
 }
