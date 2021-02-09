@@ -57,3 +57,18 @@ variable "codeDeployService_access_role" {
 }
 
 
+variable "frontend_awesome_rush_b_domain_zone_id"{
+  default = "Z10106542052FEUUAOE23"
+}
+
+variable "backend_awesome_rush_b_domain_zone_id"{
+  default = "Z10104731Y6IO36OICBY5"
+}
+
+variable "frontend_subdomain_name" {
+  default = "www.awesomerushb.com"
+}
+
+variable "backend_subdomain_name" {
+  default = "dev.awesomerushb.com"
+}
